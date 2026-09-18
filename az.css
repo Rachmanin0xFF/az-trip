@@ -191,6 +191,19 @@ main {
     text-indent: 0.6em;
 }
 
+.grid-table {
+    margin: 1.5rem auto;
+    border-collapse: collapse;
+}
+
+.grid-table td {
+    width: 2.4rem;
+    height: 2.4rem;
+    text-align: center;
+    border: 1px solid #4a4a4a;
+    font-variant-numeric: tabular-nums;
+}
+
 /* The first clue is a wall of digits; let it break anywhere. */
 .cipher {
     word-break: break-all;
