@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // so case, spaces and punctuation are all thrown away before hashing. The
     // build side folds the authored answer exactly the same way.
     const normalize = value => {
-        const withoutArticle = value.trim().replace(/^a\s+/i, "");
+        const withoutArticle = value.trim().replace(/^a\\s+/i, "");
         return withoutArticle.toUpperCase().replace(/[^A-Z0-9]/g, "");
     };
     const composedKey = () => keyInputs.map(input => normalize(input.value)).join("");
