@@ -184,6 +184,13 @@ main {
     line-height: 1.4;
 }
 
+.cipher-word {
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 0.6em;
+    text-indent: 0.6em;
+}
+
 /* The first clue is a wall of digits; let it break anywhere. */
 .cipher {
     word-break: break-all;
@@ -197,6 +204,15 @@ main {
 
 a {
     color: inherit;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 1px;
+}
+
+/* Special Elite ships one weight only, so <strong> has no real bold to fall
+   back on -- underline reads as emphasis instead. */
+strong {
+    font-weight: inherit;
+    text-decoration: underline;
     text-underline-offset: 0.3em;
     text-decoration-thickness: 1px;
 }
