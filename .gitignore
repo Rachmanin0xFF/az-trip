@@ -1,0 +1,14 @@
+**/secret.json
+secrets.local.json
+dist/
+__pycache__/
+*.py[codz]
+*.pyc
+
+# authoring notes: full route/answer key, creative source text -- kept local,
+# never committed, so a public repo doesn't spoil the puzzle
+design.md
+outline.md
+KEYS.md
+scratch/
+*.AVI

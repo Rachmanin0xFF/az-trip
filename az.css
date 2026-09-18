@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+:root {
+    color-scheme: dark;
+    background: #000;
+    color: #b0b0b0;
+    font-family: "Special Elite", monospace;
+    letter-spacing: 0.2em;
+}
+
+body {
+    margin: 0;
+    padding-top: 2rem;
+    background: #000;
+    filter: grayscale(1);
+}
+
+main,
+.az-unlock {
+    width: min(100% - 2rem, 34rem);
+    margin-inline: auto;
+}
+
+main img,
+main canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.az-field {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+}
+
+.az-sketch {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 0;
+}
+
+.az-sketch-hover {
+    opacity: 0;
+}
+
+.az-field:has(button:focus-visible) .az-sketch-hover,
+.az-field:has(button:active) .az-sketch-hover {
+    opacity: 1;
+}
+
+.az-field:has(button:focus-visible) .az-sketch-normal,
+.az-field:has(button:active) .az-sketch-normal {
+    opacity: 0;
+}
+
+@media (hover: hover) {
+    .az-field:has(button:hover) .az-sketch-hover {
+        opacity: 1;
+    }
+
+    .az-field:has(button:hover) .az-sketch-normal {
+        opacity: 0;
+    }
+}
+
+.az-unlock input,
+.az-unlock button {
+    position: relative;
+    z-index: 1;
+    display: block;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    color: #b0b0b0;
+    font: inherit;
+    letter-spacing: inherit;
+}
+
+.az-unlock input {
+    padding: 0.5rem 0.65rem;
+}
+
+.az-unlock button {
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+}
+
+.az-unlock button:focus-visible,
+.az-unlock button:active {
+    background: #b0b0b0;
+    color: #000;
+}
+
+@media (hover: hover) {
+    .az-unlock button:hover {
+        background: #b0b0b0;
+        color: #000;
+    }
+}
+
+/* --- page furniture -------------------------------------------------------
+   Everything below is deliberately plain: the typewriter face, the grayscale
+   filter and the hand-drawn field borders do the work, so these rules only
+   set rhythm and hierarchy. */
+
+main {
+    padding-bottom: 6rem;
+    line-height: 1.7;
+}
+
+.letter,
+.clipping,
+.decision,
+.puzzle,
+.address {
+    margin-block: 2.5rem;
+}
+
+.letter p {
+    text-indent: 0;
+}
+
+.sign {
+    margin-left: 55%;
+}
+
+.decision ol {
+    padding-left: 1.5rem;
+}
+
+.decision li {
+    margin-block: 1rem;
+}
+
+.address {
+    text-align: center;
+}
+
+.address .code {
+    font-size: 1.6rem;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+}
+
+.clipping {
+    border-block: 1px solid #4a4a4a;
+    padding-block: 1.5rem;
+    text-align: justify;
+}
+
+.clipping p:first-child {
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.clipping img {
+    margin: 1.5rem auto;
+}
+
+.ending {
+    display: block;
+    margin: 3rem auto 0;
+}
+
+.puzzle {
+    border-left: 1px solid #4a4a4a;
+    padding-left: 1.25rem;
+}
+
+.puzzle pre {
+    font: inherit;
+    letter-spacing: inherit;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+/* The first clue is a wall of digits; let it break anywhere. */
+.cipher {
+    word-break: break-all;
+    line-height: 1.9;
+}
+
+.onward {
+    margin-top: 3.5rem;
+    text-align: center;
+}
+
+a {
+    color: inherit;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 1px;
+}
+
+a:hover,
+a:focus-visible {
+    background: #b0b0b0;
+    color: #000;
+}
