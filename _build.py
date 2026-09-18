@@ -76,7 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Forgiving on purpose: this gets typed one-handed on a phone in the sun,
     // so case, spaces and punctuation are all thrown away before hashing. The
     // build side folds the authored answer exactly the same way.
-    const normalize = value => value.toUpperCase().replace(/[^A-Z0-9]/g, "");
+    const normalize = value => {
+        const withoutArticle = value.trim().replace(/^a\s+/i, "");
+        return withoutArticle.toUpperCase().replace(/[^A-Z0-9]/g, "");
+    };
     const composedKey = () => keyInputs.map(input => normalize(input.value)).join("");
     let attempt = 0;
 
@@ -518,7 +521,14 @@ class TextEncryptor(HTMLParser):
 
 
 def fold(answer: str) -> str:
-    """Fold an authored answer the way the page folds what a player types."""
+    """Fold an authored answer the way the page folds what a player types.
+
+    A leading "a " is dropped first, so an answer still matches whether or
+    not a player bothers with the indefinite article in front of it.
+    """
+    words = answer.split(None, 1)
+    if len(words) > 1 and words[0].lower() == "a":
+        answer = words[1]
     return "".join(
         character for character in answer.upper() if character.isascii() and character.isalnum()
     )
